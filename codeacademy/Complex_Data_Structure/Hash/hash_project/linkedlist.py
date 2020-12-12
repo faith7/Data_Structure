@@ -30,19 +30,7 @@ class LinkedList:
             current_node = next_node
 
     def __iter__(self):
-        str_list = ""
         current_node = self.head
         while(current_node):
-            str_list += str(current_node.get_value()) + " "
+            yield current_node.get_value()
             current_node = current_node.get_next_node()
-        return str_list
-
-
-node1 = Node("hello")
-node2 = Node("hi")
-node3 = Node("good-bye")
-l1 = LinkedList()
-l1.insert(node1)
-l1.insert(node2)
-l1.insert(node3)
-print(l1.__iter__())
